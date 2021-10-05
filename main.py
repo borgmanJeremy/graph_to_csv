@@ -16,7 +16,7 @@ horizontal = bw_image
 vertical = bw_image
 rows, cols = horizontal.shape
 
-horizontal_size = int(cols / 30)
+horizontal_size = int(cols / 20)
 horizontal_structure = cv2.getStructuringElement(
     cv2.MORPH_RECT, (horizontal_size, 1))
 horizontal = cv2.erode(horizontal, horizontal_structure, (-1, -1))
@@ -26,7 +26,7 @@ cv2.imshow("Horizontal", horizontal)
 res = cv2.bitwise_xor(horizontal, bw_image)
 cv2.imshow("result", ~res)
 
-vertical_size = int(rows / 30)
+vertical_size = int(rows / 10)
 vertical_structure = cv2.getStructuringElement(
     cv2.MORPH_RECT, (1, vertical_size))
 vertical = cv2.erode(vertical, vertical_structure, (-1, -1))
@@ -35,7 +35,7 @@ cv2.imshow("Vertical", vertical)
 
 res = cv2.bitwise_xor(vertical, res)
 cv2.imshow("result", res)
-
+res=~res
 kernel = np.ones((2,2))
 res = cv2.dilate(res, kernel)
 cv2.imshow("result_dilate", res)

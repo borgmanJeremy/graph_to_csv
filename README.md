@@ -7,6 +7,7 @@ main.py contains a simple example based on [this](https://vovkos.github.io/doxyr
 
 ## More Ideas
 - Support log / linear x and y scales
+- support tweaking filter with slider bars to support datasheet images with different line sizes
 - Support cropping
 - Highlight multiple curves in different highlighter colors to support multi export.
 - Port to c++ (openCV + QT) once prototype is working
